@@ -6,9 +6,12 @@ import ItemContainer from './ItemContainer'
 import ItemDetails from './ItemDetails'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
+const currentUser = { username: "Melissa123" }
+
 
 function App() {
   const [items, setItems] = useState([])
+  const [category, setCategory] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:3000/items')
@@ -16,6 +19,14 @@ function App() {
       .then(itemData => setItems(itemData))
 
   }, [])
+
+  useEffect(() => {
+    fetch('http://localhost:3000/categories')
+    .then(res => res.json())
+    .then(categoryData => setCategory(categoryData))
+  }, [])
+
+  console.log(category)
 
   // App 
     // Header
@@ -30,6 +41,12 @@ function App() {
     // ItemCart
     // UserMarket
 
+    function handleAddItem(newItemData) {
+        const newItemList = [...items, newItemData]
+        setItems(newItemList)
+    }
+
+
   return (
     <div className="App">
       <Router>
@@ -42,7 +59,7 @@ function App() {
             {/* <Signup /> */}
           </Route>
           <Route exact path="/browse">
-            <ItemContainer items={items} />
+            <ItemContainer items={items}  addItem={handleAddItem} currentUser={currentUser} category={category}/>
           </Route>
           <Route exact path="/items/:id">
             <ItemDetails />

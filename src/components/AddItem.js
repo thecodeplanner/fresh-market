@@ -124,7 +124,7 @@ function AddItem({addItem, category, currentUser}) {
                 </select>
                
             </label>
-            <input type="submit" value="Add Item" />
+            <input type="submit" value="Submit" />
         </form>
     )
 }

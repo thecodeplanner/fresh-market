@@ -1,7 +1,10 @@
 import React, {useState, useEffect} from "react"
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
-function ItemDetails({currentUser}) {
+function ItemDetails({currentUser, onSetCart}) {
+    const history = useHistory()
+
+  
 
     const [item, setItem] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false)
@@ -18,7 +21,20 @@ function ItemDetails({currentUser}) {
     },[params.id])
 
 
+    function handleAddToCart() {
+        if (currentUser) {
+            onSetCart(item)
+            alert(`${item.name} has been added to cart!`)
+            history.push('/browse')
+        }else {
+            alert('Please login before adding to cart.')
+        }
+       
+    }
+
+
     if (!isLoaded) return <h2>Loading...</h2>;
+
 
 
     return(
@@ -28,8 +44,7 @@ function ItemDetails({currentUser}) {
             <p>Description: {item.description}</p>
             <p>Quantity: {item.quantity}</p>
             <p>Price: ${item.price} </p>
-            <button>Add to Cart</button>
-            {/* {currentUser ? item.user.username === "Melissa123" ? <p>Update item</p> : null : null} */}
+            <button onClick={handleAddToCart}>Add to Cart</button>
         </div>
     )
 }

@@ -6,6 +6,7 @@ import ItemContainer from './ItemContainer'
 import ItemDetails from './ItemDetails'
 import Login from './Login'
 import UpdateItem from './UpdateItem'
+import Cart from './Cart'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
@@ -15,8 +16,9 @@ function App() {
   const [items, setItems] = useState([])
   const [category, setCategory] = useState([])
   const [currentUser, setCurrentUser] = useState(null)
+  const [inCart, setInCart] = useState([])
 
-  console.log(currentUser)
+  // console.log(currentUser)
 
   useEffect(() => {
     fetch('http://localhost:3000/items')
@@ -33,18 +35,6 @@ function App() {
 
   // console.log(category)
 
-  // App 
-    // Header
-      // NavBar
-
-    // Search
-
-    // AddItem
-    // ItemList
-        // Item
-          // ItemDetails
-    // ItemCart
-    // UserMarket
 
     function handleAddItem(newItemData) {
         const newItemList = [...items, newItemData]
@@ -57,6 +47,20 @@ function App() {
         return item.id !== id
       })
       setItems(updatedItemList)
+    }
+
+    function handleSetCart(item) {
+      // console.log(item)
+      const updatedCart = [...inCart, item ]
+      setInCart(updatedCart)
+      console.log(inCart)
+    }
+
+    function handleRemoveFromCart(id) {
+      const updatedCart = inCart.filter((inCartItem) => {
+        return inCartItem.id !== id
+      })
+      setInCart(updatedCart)
     }
 
 
@@ -75,21 +79,17 @@ function App() {
             <ItemContainer items={items}  addItem={handleAddItem} currentUser={currentUser} category={category}/>
           </Route>
           <Route exact path="/items/:id">
-            <ItemDetails currentUser={currentUser}/>
+            <ItemDetails currentUser={currentUser} onSetCart={handleSetCart} />
           </Route>
           <Route exact path="/update/:id">
             <UpdateItem onDelete={handleDeleteItem}/>
           </Route>
           <Route exact path="/cart">
-            {/* <ItemCart /> */}
+            <Cart inCart={inCart} removeFromTheCart={handleRemoveFromCart} setInCart={setInCart} />
           </Route>
         </Switch>
       </Router>
       
-      
-      {/* Create user's market after?? */}
-      {/* <UserMarket /> */}
-
     </div>
   );
 }

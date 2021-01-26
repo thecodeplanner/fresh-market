@@ -1,10 +1,10 @@
 import React from "react"
 
-function Search() {
+function Search({setSearch}) {
     return (
         <div>
             <h4> Search </h4>
-            <input placeholder='Search for items'/>
+            <input onChange={(event) => setSearch(event.target.value)} placeholder='Search for items'/>   
         </div>
     
     

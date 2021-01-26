@@ -1,13 +1,13 @@
 import React, {useState} from "react"
 
-function AddItem({addItem, currentUser, category}) {
+function AddItem({addItem, category, currentUser}) {
 
     const [name, setName] = useState("")
     const [description, setDescription] = useState("")
     const [quantity, setQuantity] = useState("")
     const [price, setPrice] = useState("")
     const [image, setImage] = useState("")
-    const [userId, setUserId] = useState("")
+    // const [userId, setUserId] = useState("")
     const [categoryId, setCategoryId] = useState("")
 
     function handleOption(e) {
@@ -29,17 +29,17 @@ function AddItem({addItem, currentUser, category}) {
 
 
     // fetch users and matched user's id with current user
-    fetch('http://localhost:3000/users')
-        .then(res => res.json())
-        .then(userData => {
-            const user = userData.filter((user) => {
-                if (user.username === currentUser.username) {
-                    return user
-                }
-            })
-            const userId = user.map(user => user.id)
-            setUserId(parseInt(userId))
-        })
+    // fetch('http://localhost:3000/users')
+    //     .then(res => res.json())
+    //     .then(userData => {
+    //         const user = userData.filter((user) => {
+    //             if (user.username === currentUser.username) {
+    //                 return user
+    //             }
+    //         })
+    //         const userId = user.map(user => user.id)
+    //         setUserId(parseInt(userId))
+    //     })
    
         
 
@@ -53,12 +53,11 @@ function AddItem({addItem, currentUser, category}) {
             quantity,
             price,
             image, 
-            user_id: userId,
+            user_id: currentUser.id,
             category_id: categoryId
         }
 
-       
-        console.log(newItem)
+        // console.log(newItem)
 
         fetch('http://localhost:3000/items', {
             method: 'POST',
@@ -70,9 +69,11 @@ function AddItem({addItem, currentUser, category}) {
             .then(res => res.json())
             .then(newItemData => addItem(newItemData))
 
-        
-            
-            
+        setName('')
+        setDescription('')
+        setQuantity('')
+        setPrice('')
+        setImage('')      
             
     }
     return (

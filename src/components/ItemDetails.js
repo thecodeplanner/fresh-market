@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from "react"
 import { useParams } from "react-router-dom";
 
-function ItemDetails() {
+function ItemDetails({currentUser}) {
 
     const [item, setItem] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false)
     const params = useParams()
+
 
     useEffect(() => {
         fetch(`http://localhost:3000/items/${params.id}`)
@@ -15,6 +16,7 @@ function ItemDetails() {
          setIsLoaded(true)
          })
     },[params.id])
+
 
     if (!isLoaded) return <h2>Loading...</h2>;
 
@@ -27,6 +29,7 @@ function ItemDetails() {
             <p>Quantity: {item.quantity}</p>
             <p>Price: ${item.price} </p>
             <button>Add to Cart</button>
+            {/* {currentUser ? item.user.username === "Melissa123" ? <p>Update item</p> : null : null} */}
         </div>
     )
 }

@@ -3,10 +3,10 @@ import Search from './Search'
 import Item from './Item'
 import AddItem from './AddItem'
 
-function ItemContainer({items, addItem, currentUser, category}) {
+function ItemContainer({items, addItem, category, currentUser}) {
     const item = items.map((item) => {
         return (
-            <Item key={item.id} item={item} />
+            <Item key={item.id} item={item} currentUser={currentUser}/>
         )
     })
 
@@ -17,10 +17,8 @@ function ItemContainer({items, addItem, currentUser, category}) {
     
     return (
         <div> 
-            <h3>Item Container</h3>
             <Search />
-            {/* <button>Add Item to Freshmade Market</button> */}
-            <AddItem  addItem={addItem} currentUser={currentUser} category={category}/>
+            {currentUser ? (<AddItem  addItem={addItem} category={category} currentUser={currentUser}/>) : (null)}
             {item}
         </div>
     )

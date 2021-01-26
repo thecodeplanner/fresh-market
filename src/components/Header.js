@@ -3,15 +3,16 @@ import Navbar from "./Navbar"
 
 
 
-function Header() {
+function Header({currentUser, setCurrentUser}) {
     return (
         <>
         <div className="header">
             <h1>Freshmade Market</h1>
         </div>
         <div>
-             <Navbar />
+             <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </div>
+
         </>
     )
 }

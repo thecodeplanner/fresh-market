@@ -4,14 +4,19 @@ import React, {useEffect, useState} from 'react'
 import Header from './Header'
 import ItemContainer from './ItemContainer'
 import ItemDetails from './ItemDetails'
+import Login from './Login'
+import UpdateItem from './UpdateItem'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-const currentUser = { username: "Melissa123" }
+
 
 
 function App() {
   const [items, setItems] = useState([])
   const [category, setCategory] = useState([])
+  const [currentUser, setCurrentUser] = useState(null)
+
+  console.log(currentUser)
 
   useEffect(() => {
     fetch('http://localhost:3000/items')
@@ -26,7 +31,7 @@ function App() {
     .then(categoryData => setCategory(categoryData))
   }, [])
 
-  console.log(category)
+  // console.log(category)
 
   // App 
     // Header
@@ -47,13 +52,21 @@ function App() {
     }
 
 
+    function handleDeleteItem(id) {
+      const updatedItemList = items.filter((item) => {
+        return item.id !== id
+      })
+      setItems(updatedItemList)
+    }
+
+
   return (
     <div className="App">
       <Router>
-      <Header />
+      <Header currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         <Switch>
           <Route exact path="/login">
-            {/* <Login /> */}
+            <Login setCurrentUser={setCurrentUser}/>
           </Route>
           <Route exact path="/signup">
             {/* <Signup /> */}
@@ -62,7 +75,10 @@ function App() {
             <ItemContainer items={items}  addItem={handleAddItem} currentUser={currentUser} category={category}/>
           </Route>
           <Route exact path="/items/:id">
-            <ItemDetails />
+            <ItemDetails currentUser={currentUser}/>
+          </Route>
+          <Route exact path="/update/:id">
+            <UpdateItem onDelete={handleDeleteItem}/>
           </Route>
           <Route exact path="/cart">
             {/* <ItemCart /> */}

@@ -25,7 +25,7 @@ function Login({setCurrentUser}) {
     return (
         <div>      
             <form className="login-form" onSubmit={handleSubmit}>
-                <h1>add something here</h1>
+                <h2>welcome back, let's see what's fresh today!</h2>
                 <label htmlFor="username">username</label>
                 <br></br>
                 <input

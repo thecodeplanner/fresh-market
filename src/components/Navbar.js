@@ -14,32 +14,26 @@ function Navbar({currentUser, setCurrentUser}) {
 
     return(
         <div className="navbar page-layout">
-            <NavLink to="/browse" exact className="button" >
-                <li>browse</li>
-            </NavLink>
-            {currentUser ? 
-            (<>
-            <NavLink to="/cart" exact className="button">
-                <li>my cart</li>
-            </NavLink>
-             <a className="button" onClick={logout}>logout</a> 
-             </>) : 
-            (<>
-            <NavLink to="/login" exact className="button">
-                <li>login</li>
-            </NavLink>
+                <NavLink to="/browse" exact className="button" >
+                    <li>browse</li>
+                </NavLink>
+                {currentUser ? 
+                (<>
+                <NavLink to="/cart" exact className="button">
+                    <li>my cart</li>
+                </NavLink>
+                <a className="button" onClick={logout}>logout</a> 
+                </>) : 
+                (<>
+                <NavLink to="/login" exact className="button">
+                    <li>login</li>
+                </NavLink>
 
-            <NavLink to="/signup" exact className="button">
-                <li>signup</li>
-            </NavLink>
-            </>
-            )}
-
-          
-               
-
-            
-            
+                <NavLink to="/signup" exact className="button">
+                    <li>signup</li>
+                </NavLink>
+                </>
+                )}
         </div>
     )
 }

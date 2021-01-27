@@ -8,7 +8,7 @@ import Login from './Login'
 import Home from './Home'
 import UpdateItem from './UpdateItem'
 import Cart from './Cart'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
 
 
@@ -18,7 +18,7 @@ function App() {
   const [category, setCategory] = useState([])
   const [currentUser, setCurrentUser] = useState(null)
   const [inCart, setInCart] = useState([])
-
+  
   // console.log(currentUser)
 
   useEffect(() => {
@@ -43,25 +43,26 @@ function App() {
     }
 
 
-    function handleDeleteItem(id) {
+    function handleDeleteItem(id) {  
       const updatedItemList = items.filter((item) => {
         return item.id !== id
-      })
+    })
       setItems(updatedItemList)
     }
 
     function handleSetCart(item) {
-      // console.log(item)
       const updatedCart = [...inCart, item ]
       setInCart(updatedCart)
       console.log(inCart)
     }
 
-    function handleRemoveFromCart(id) {
+    function handleRemoveFromCart(cartItem) {
+     if (window.confirm(`Are you sure you want to remove ${cartItem.name} from cart?`)) {
       const updatedCart = inCart.filter((inCartItem) => {
-        return inCartItem.id !== id
+        return inCartItem.id !== cartItem.id
       })
       setInCart(updatedCart)
+     }
     }
 
 

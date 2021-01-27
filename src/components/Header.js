@@ -6,7 +6,7 @@ import Navbar from "./Navbar"
 function Header({currentUser, setCurrentUser}) {
     return (
         <>
-        <div className="header">
+        <div id="header">
             <img id="logo" src="Freshmade.png" alt="Freshmade"/>
         </div>
         <div>

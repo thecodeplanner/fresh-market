@@ -12,15 +12,15 @@ code {
     monospace;
 }
 
-.header {
-  padding-left: 30%;
+#header {
+  padding-left: 35%;
   display: flex;
   justify-content: space-between;
   align-content: center;
 }
 
 #logo {
-  align-content: center;
+  text-align: center;
   width: 50%;
 }
 
@@ -70,7 +70,7 @@ code {
 
   .navbar li {
     display: inline-block;
-    padding: 40px;
+    padding: 60px;
   }
 
 
@@ -89,13 +89,15 @@ code {
     width: 250px;
     align-content: center;
     border-radius: 5px;
-    margin-left: 40%
+    margin-left: 40%;
+
   }
 
   .add-item-form {
       padding: 30px;
       background-color: #f6eec9;
       text-align: center;
+      box-shadow: 0 0 7px 0 #5c5e59;
   }
 
   .Filter {
@@ -148,6 +150,7 @@ button:hover {
   padding: 30px;
   background-color: #f6eec9;
   text-align: center;
+  box-shadow: 0 0 7px 0 #5c5e59;
 }
 
 .item-update-page {
@@ -159,6 +162,11 @@ button:hover {
   text-align: center;
   margin: 25px;
 }
+
+.login-form {
+  color: #5c5e59;
+}
+
 
 
 

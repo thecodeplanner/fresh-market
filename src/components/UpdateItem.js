@@ -50,11 +50,13 @@ function UpdateItem({onDelete}) {
 
 
        function handleDelete() {
-           fetch(`http://localhost:3000/items/${item.id}`, {
-               method: "DELETE"
-           })
-           onDelete(item.id)
-           history.push("/browse")
+           if (window.confirm(`Are you sure you want to delete ${item.name} from the market?`)) {
+            fetch(`http://localhost:3000/items/${item.id}`, {
+                method: "DELETE"
+            })
+            onDelete(item.id)
+            history.push("/browse")
+           }
        }
 
 

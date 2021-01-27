@@ -27,7 +27,7 @@ function ItemDetails({currentUser, onSetCart}) {
             alert(`${item.name} has been added to cart!`)
             history.push('/browse')
         }else {
-            alert('Please login before adding to cart.')
+            alert('Please login or signup before adding to cart.')
         }
        
     }

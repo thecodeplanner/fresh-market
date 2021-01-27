@@ -5,7 +5,7 @@ function Cart({inCart, removeFromTheCart, setInCart}) {
 
     function handleCheckout() {
         setInCart([])
-        alert('Thanks for shopping at Freshmade!')
+        alert('Thanks for shopping at Freshmade Market! Enjoy!')
     }
 
     const cartPrice = inCart.map((cartItems) => {

@@ -7,6 +7,7 @@ import ItemDetails from './ItemDetails'
 import Login from './Login'
 import Home from './Home'
 import UpdateItem from './UpdateItem'
+import Signup from './Signup'
 import Cart from './Cart'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
@@ -75,7 +76,7 @@ function App() {
             <Login setCurrentUser={setCurrentUser}/>
           </Route>
           <Route exact path="/signup">
-            {/* <Signup /> */}
+            <Signup setCurrentUser={setCurrentUser} currentUser={currentUser}/>
           </Route>
           <Route exact path="/home">
             <Home />

@@ -30,7 +30,7 @@ function Item({item, currentUser}) {
                 <NavLink to={`/items/${item.id}`} exact className="button">show details</NavLink>
                 <br></br>
                 <br></br>
-                {currentUser ? item.user.username === "Melissa123" ? <a className="button" onClick={handleUpdateItem}>update item</a> : null : null}
+                {currentUser ? item.user.username === currentUser.username ? <a className="button" onClick={handleUpdateItem}>update item</a> : null : null}
             </div>
         </div>
         </>

@@ -57,7 +57,7 @@ function AddItem({addItem, category, currentUser}) {
             category_id: categoryId
         }
 
-        console.log(newItem)
+        // console.log(newItem)
 
         fetch('http://localhost:3000/items', {
             method: 'POST',
@@ -68,6 +68,7 @@ function AddItem({addItem, category, currentUser}) {
         }) 
             .then(res => res.json())
             .then(newItemData => addItem(newItemData))
+
 
         setName('')
         setDescription('')

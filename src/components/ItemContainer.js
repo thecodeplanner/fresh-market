@@ -45,7 +45,7 @@ function ItemContainer({items, addItem, category, currentUser}) {
             <Search setSearch={setSearch}/>
             <br></br>
             <div className="Filter">
-                    <select name="filter" onChange={handleChangeFilter}>
+                    <select id="filter" className="ui selection dropdown" name="filter" onChange={handleChangeFilter}>
                         <option value="All">Filter By Category (Show All)</option>
                         <option value="Produce">Produce</option>
                         <option value="Dairy">Dairy</option>

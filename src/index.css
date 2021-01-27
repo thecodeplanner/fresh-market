@@ -14,18 +14,111 @@ code {
 
 .header {
   padding-left: 30%;
-  color: green;
   display: flex;
   justify-content: space-between;
   align-content: center;
 }
 
+#logo {
+  align-content: center;
+  width: 50%;
+}
+
 .image {
-  border: 1px solid #ddd;
   border-radius: 4px;
-  padding: 5px;
   width: 300px;
   height: 250px;
 }
 
-  
+.page-layout {
+  margin: 40px;
+}
+
+.card {
+  margin: 1rem;
+  box-shadow: 0 0 7px 0 #ddd;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 325px;
+}
+
+   .cards {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .item-name {
+    text-align: center;
+  }
+
+  .card-info {
+    text-align: center;
+    align-content: center;
+    padding: 15px;
+    color: #799351
+  }
+
+  .like {
+    color:#a20a0a;
+    font-size: 25px;
+
+  }
+
+  .navbar li {
+    display: inline-block;
+    padding: 40px;
+  }
+
+
+  .search input {
+    width: 90%;
+    font-size: 1rem;
+    height: 2rem;
+    margin-right: 0.5rem;
+    margin-left: 5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding-left: 1rem;
+  }
+
+  form {
+    width: 250px;
+    align-content: center;
+    border-radius: 5px;
+    margin-left: 35%
+  }
+
+  .add-item-form {
+      padding: 30px;
+      background-color: #f6eec9;
+      text-align: center;
+  }
+
+  .Filter {
+    text-align: center;
+  }
+
+  .add-item-button {
+    flex-direction: flex;
+    justify-content: center;
+  }
+
+
+.button {
+  background-color: #ffa36c;
+  color: white;
+  padding: 0.50rem;
+  margin: 10px;
+  border-radius: 4px;
+}
+
+.button.active,
+.button:hover,
+button.active,
+button:focus,
+button:hover {
+  color: #799351;
+  background-color: #f6eec9;
+}
+

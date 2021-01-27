@@ -65,7 +65,7 @@ function UpdateItem({onDelete}) {
                 <img className="image" src={item.image} alt={item.name}/> 
             </div>
             <form className="edit-item" onSubmit={handleUpdateItem}>
-                <label> Description
+                <label> description
                     <textarea rows="2" cols="25"
                         type="text"
                         name="description"
@@ -74,7 +74,7 @@ function UpdateItem({onDelete}) {
                     />
                 </label>
                 
-                <label> Quantity
+                <label> quantity
                     <input
                         type="number"
                         name="quantity"
@@ -82,7 +82,7 @@ function UpdateItem({onDelete}) {
                         onChange={(e) => setQuantity(e.target.value)}
                     />
                 </label>
-                <label> Price
+                <label> price
                     <input
                         type="text"
                         name="price"

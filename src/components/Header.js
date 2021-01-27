@@ -7,7 +7,7 @@ function Header({currentUser, setCurrentUser}) {
     return (
         <>
         <div className="header">
-            <h1>Freshmade Market</h1>
+            <img id="logo" src="Freshmade.png" alt="Freshmade"/>
         </div>
         <div>
              <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser} />

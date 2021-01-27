@@ -13,28 +13,29 @@ function Navbar({currentUser, setCurrentUser}) {
       }
 
     return(
-        <div className="navbar">
-            <NavLink to="/browse" exact>
+        <div className="navbar page-layout">
+            <NavLink to="/browse" exact className="button" >
                 <li>browse</li>
             </NavLink>
-        
-        {currentUser ? 
+            {currentUser ? 
             (<>
-            <NavLink to="/cart" exact>
+            <NavLink to="/cart" exact className="button">
                 <li>my cart</li>
             </NavLink>
-             <button onClick={logout}>Logout</button> 
+             <a className="button" onClick={logout}>logout</a> 
              </>) : 
             (<>
-            <NavLink to="/login" exact>
+            <NavLink to="/login" exact className="button">
                 <li>login</li>
             </NavLink>
 
-            <NavLink to="/signup" exact>
+            <NavLink to="/signup" exact className="button">
                 <li>signup</li>
             </NavLink>
             </>
             )}
+
+          
                
 
             

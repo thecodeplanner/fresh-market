@@ -25,8 +25,9 @@ function Login({setCurrentUser}) {
     return (
         <div>      
             <form onSubmit={handleSubmit}>
-                <h1>Login</h1>
-                <label htmlFor="username">Username</label>
+                <h1>add something here</h1>
+                <label htmlFor="username">username</label>
+                <br></br>
                 <input
                 type="text"
                 id="username"
@@ -34,7 +35,10 @@ function Login({setCurrentUser}) {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 />
-                <label htmlFor="password">Password</label>
+                <br></br>
+                <br></br>
+                <label htmlFor="password">password</label>
+                <br></br>
                 <input
                 type="password"
                 id="password"
@@ -42,7 +46,9 @@ function Login({setCurrentUser}) {
                 onChange={(e) => setPassword(e.target.value)}
                 autoComplete="current-password"
                 />
-                <input type="submit" value="Login" />
+                <br></br>
+                <br></br>
+                <input type="submit" value="login" />
             </form>
         </div>
 

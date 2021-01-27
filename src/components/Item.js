@@ -4,20 +4,33 @@ import { NavLink, useHistory } from "react-router-dom"
 
 function Item({item, currentUser}) {
     const history = useHistory()
+    const [like, setLike] = useState(false)
 
     
     function handleUpdateItem() {
         history.push( `/update/${item.id}`)
     }
 
+    function handleLike() {
+        setLike(!like)
+    }
+
     // console.log(item.user.username)
     return (
-        <div>
-            <img className="image" src={item.image} alt={item.name} />
-            <h3>{item.name}</h3>
-            {currentUser ? item.user.username === "Melissa123" ? <button onClick={handleUpdateItem}>Update item</button> : null : null}
-            <NavLink to={`/items/${item.id}`} exact>See More Details</NavLink>
+        <>
+        <div className="card">     
+            <div className="card-info">
+                <img className="image" src={item.image} alt={item.name} />
+                {like ? <span className="like" onClick={handleLike}>♥️</span> :  <span className="like"  onClick={handleLike}> ♡</span> }
+                <h3>{item.name}</h3>       
+                <br></br>
+                <NavLink to={`/items/${item.id}`} exact className="button">show details</NavLink>
+                <br></br>
+                <br></br>
+                {currentUser ? item.user.username === "Melissa123" ? <a className="button" onClick={handleUpdateItem}>update item</a> : null : null}
+            </div>
         </div>
+        </>
 
     )
 }

@@ -57,7 +57,7 @@ function AddItem({addItem, category, currentUser}) {
             category_id: categoryId
         }
 
-        // console.log(newItem)
+        console.log(newItem)
 
         fetch('http://localhost:3000/items', {
             method: 'POST',
@@ -73,28 +73,37 @@ function AddItem({addItem, category, currentUser}) {
         setDescription('')
         setQuantity('')
         setPrice('')
-        setImage('')      
+        setImage('')
             
     }
     return (
-        <form onSubmit={handleSubmit}> 
-            <label> Name
+        <form className="add-item-form" onSubmit={handleSubmit}> 
+            <label> name 
+                <br></br>
                 <input
+                    className="add-item-input"
                     type="text"
                     name="name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
             </label>
-            <label> Description
-                <input
+            <br></br>
+            <br></br>
+            <label> description 
+                <br></br>
+                <textarea rows="2" cols="25"
                     type="text"
                     name="description"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
+                
                 />
             </label>
-            <label> Quantity
+            <br></br>
+            <br></br>
+            <label> quantity 
+                <br></br>
                 <input
                     type="number"
                     name="quantity"
@@ -102,7 +111,10 @@ function AddItem({addItem, category, currentUser}) {
                     onChange={(e) => setQuantity(parseInt(e.target.value))}
                 />
             </label>
-            <label> Price
+            <br></br>
+            <br></br>
+            <label> price 
+                <br></br>
                 <input
                     type="number"
                     name="price"
@@ -110,7 +122,10 @@ function AddItem({addItem, category, currentUser}) {
                     onChange={(e) => setPrice(parseFloat(e.target.value))}
                 />
             </label>
-            <label> Image
+            <br></br>
+            <br></br>
+            <label> image
+                <br></br>
                 <input
                     type="text"
                     name="image"
@@ -118,13 +133,18 @@ function AddItem({addItem, category, currentUser}) {
                     onChange={(e) => setImage(e.target.value)}
                 />
             </label>
-            <label> Category
+            <br></br>
+            <br></br>
+            <label> category
+                <br></br>
                 <select onChange={handleOption}> 
+                <option> Choose Category </option>
                 {categories}
                 </select>
-               
             </label>
-            <input type="submit" value="Submit" />
+            <br></br>
+            <br></br>
+            <input className="button" type="submit" value="submit" />
         </form>
     )
 }

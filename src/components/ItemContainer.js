@@ -54,8 +54,10 @@ function ItemContainer({items, addItem, category, currentUser}) {
                         <option value="Specialty">Specialty</option>
                     </select>
             </div>
-            {currentUser ? <button onClick={showAddItemForm} className="add-item-button button"> Add Item</button> : (null)}
-            {showForm ? <AddItem addItem={addItem} category={category} currentUser={currentUser}/> : null}
+                <div id="add-sold-out-button">
+                    {currentUser ? <button onClick={showAddItemForm} className="button"> Add Item</button> : (null)}
+                    {showForm ? <AddItem addItem={addItem} category={category} currentUser={currentUser}/> : null}
+                </div>
             <ul className="cards">
             {item}
             </ul>

@@ -7,7 +7,7 @@ function Navbar({currentUser, setCurrentUser}) {
     function logout() {
         
         setCurrentUser(null);
-        history.push('/')
+        history.push('/home')
 
 
       }

@@ -17,7 +17,7 @@ function CartItem({cartItem, removeFromTheCart, cartPrice}) {
                 <p>Description: {cartItem.description}</p>
                 <p>Quantity: 1</p>
                 <p>Price: ${cartItem.price} </p>
-                <button onClick={() => {removeFromTheCart(cartItem.id)}}>Remove</button>
+                <button className="ui negative basic button" onClick={() => {removeFromTheCart(cartItem.id)}}>Remove</button>
              </div>     
         </div>
         </>

@@ -20,9 +20,12 @@ function Item({item, currentUser}) {
         <>
         <div className="card">     
             <div className="card-info">
-                <img className="image" src={item.image} alt={item.name} />
+                <h3>{item.name}</h3>  
                 {like ? <span className="like" onClick={handleLike}>♥️</span> :  <span className="like"  onClick={handleLike}> ♡</span> }
-                <h3>{item.name}</h3>       
+                <br></br>
+                <img className="image" src={item.image} alt={item.name} />
+
+                <br></br>     
                 <br></br>
                 <NavLink to={`/items/${item.id}`} exact className="button">show details</NavLink>
                 <br></br>

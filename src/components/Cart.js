@@ -23,7 +23,7 @@ function Cart({inCart, removeFromTheCart, setInCart}) {
         )
     })
     return(
-        <div>
+        <div className="page-layout">
             <h2> My Cart:</h2>
              {/* <div className="card">
               <div className="card-info"> */}
@@ -31,7 +31,13 @@ function Cart({inCart, removeFromTheCart, setInCart}) {
               {/* </div>
              </div> */}
              <h3>Total: ${cartPrice.toFixed(2)}  </h3>
-            <button onClick={handleCheckout}>Checkout</button>
+            {/* <button onClick={handleCheckout}>Checkout</button> */}
+            <div class="ui vertical animated button" tabindex="0" onClick={handleCheckout}>
+                <div class="hidden content"> Checkout </div>
+                <div class="visible content">
+                    <i class="shop icon"></i>
+                </div>
+            </div>
         </div>
         
     )

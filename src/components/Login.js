@@ -24,7 +24,7 @@ function Login({setCurrentUser}) {
      
     return (
         <div>      
-            <form onSubmit={handleSubmit}>
+            <form className="login-form" onSubmit={handleSubmit}>
                 <h1>add something here</h1>
                 <label htmlFor="username">username</label>
                 <br></br>
@@ -48,7 +48,7 @@ function Login({setCurrentUser}) {
                 />
                 <br></br>
                 <br></br>
-                <input type="submit" value="login" />
+                <input className="button" type="submit" value="login" />
             </form>
         </div>
 

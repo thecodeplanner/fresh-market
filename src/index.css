@@ -26,12 +26,13 @@ code {
 
 .image {
   border-radius: 4px;
-  width: 300px;
-  height: 250px;
+  width: 195px;
+  height: 135px;
 }
 
 .page-layout {
-  margin: 40px;
+  margin: 50px;
+  color:#5c5e59;
 }
 
 .card {
@@ -39,13 +40,15 @@ code {
   box-shadow: 0 0 7px 0 #ddd;
   border-radius: 5px;
   border: 1px solid #ccc;
-  width: 325px;
+  width: 250px;
 }
 
    .cards {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    align-content: center;
+    padding-left: 7%;
   }
 
   .item-name {
@@ -86,7 +89,7 @@ code {
     width: 250px;
     align-content: center;
     border-radius: 5px;
-    margin-left: 35%
+    margin-left: 40%
   }
 
   .add-item-form {
@@ -111,6 +114,7 @@ code {
   padding: 0.50rem;
   margin: 10px;
   border-radius: 4px;
+  border: none;
 }
 
 .button.active,
@@ -120,5 +124,43 @@ button:focus,
 button:hover {
   color: #799351;
   background-color: #f6eec9;
+  border: none;
 }
+
+.welcome-sign {
+  font-size: 20px;
+  animation: shake;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+}
+
+.home-page {
+  text-align: center;
+  color: #5c5e59;
+}
+
+.community {
+  color: #799351;
+  text-align: center;
+}
+
+.edit-item {
+  padding: 30px;
+  background-color: #f6eec9;
+  text-align: center;
+}
+
+.item-update-page {
+  text-align: center;
+  margin: 5px;
+}
+
+#add-sold-out-button {
+  text-align: center;
+  margin: 25px;
+}
+
+
+
+
 

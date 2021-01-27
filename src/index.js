@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-// import Freshmade from '/public'
+import 'semantic-ui-css/semantic.min.css'
+
 
 ReactDOM.render(
   <React.StrictMode>

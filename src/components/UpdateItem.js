@@ -59,8 +59,8 @@ function UpdateItem({onDelete}) {
 
 
     return(
-        <div>
-            <div>
+        <div className="page-layout">
+            <div className="item-update-page">
                 <h3>{item.name}</h3>
                 <img className="image" src={item.image} alt={item.name}/> 
             </div>
@@ -72,9 +72,9 @@ function UpdateItem({onDelete}) {
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                     />
-                </label>
-                
+                </label>    
                 <label> quantity
+                    <br></br>
                     <input
                         type="number"
                         name="quantity"
@@ -82,7 +82,9 @@ function UpdateItem({onDelete}) {
                         onChange={(e) => setQuantity(e.target.value)}
                     />
                 </label>
+                <br></br>
                 <label> price
+                    <br></br>
                     <input
                         type="text"
                         name="price"
@@ -90,10 +92,13 @@ function UpdateItem({onDelete}) {
                         onChange={(e) => setPrice(e.target.value)}
                     />
                 </label>
-                <input type="submit" />
+                <br></br>
+                <br></br>
+                <input className="button" type="submit" value="update" />
             </form>
-
-            <button onClick={handleDelete}>Sold Out!</button>
+            <div id="add-sold-out-button">
+                 <button className="ui negative basic button item-update-page" onClick={handleDelete}>Sold Out!</button>
+            </div>
         </div>
          
         

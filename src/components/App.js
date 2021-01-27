@@ -5,6 +5,7 @@ import Header from './Header'
 import ItemContainer from './ItemContainer'
 import ItemDetails from './ItemDetails'
 import Login from './Login'
+import Home from './Home'
 import UpdateItem from './UpdateItem'
 import Cart from './Cart'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
@@ -74,6 +75,9 @@ function App() {
           </Route>
           <Route exact path="/signup">
             {/* <Signup /> */}
+          </Route>
+          <Route exact path="/home">
+            <Home />
           </Route>
           <Route exact path="/browse">
             <ItemContainer items={items}  addItem={handleAddItem} currentUser={currentUser} category={category}/>

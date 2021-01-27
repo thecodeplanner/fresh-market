@@ -38,16 +38,19 @@ function ItemDetails({currentUser, onSetCart}) {
 
 
     return(
-        <div className="card">
+        <div className="page-layout">
+            <div className="card">
             <div className="card-info">
-                <img className="image" src={item.image} alt={item.name} />
                 <h3>{item.name}</h3>
+                <img className="image" src={item.image} alt={item.name} />
                 <p>{item.description}</p>
                 <p>Quantity: {item.quantity}</p>
                 <p>Price: ${item.price.toFixed(2)} </p>
                 <a className="button" onClick={handleAddToCart}>Add to Cart</a>
             </div> 
+            </div>
         </div>
+     
     )
 }
 

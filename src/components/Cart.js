@@ -26,11 +26,11 @@ function Cart({inCart, removeFromTheCart, setInCart}) {
         <div className="page-layout">
             <h2> My Cart:</h2>
             {cartItems}
-             <h3>Total: ${cartPrice.toFixed(2)}  </h3>
-            <div class="ui vertical animated button" tabindex="0" onClick={handleCheckout}>
-                <div class="hidden content"> Checkout </div>
-                <div class="visible content">
-                    <i class="shop icon"></i>
+             <h3>Total: ${cartPrice.toFixed(2)}</h3>
+            <div className="ui vertical animated button" tabindex="0" onClick={handleCheckout}>
+                <div className="hidden content"> Checkout </div>
+                <div className="visible content">
+                    <i className="shop icon"></i>
                 </div>
             </div>
         </div>

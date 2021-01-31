@@ -12,7 +12,7 @@ function ItemDetails({currentUser, onSetCart}) {
 
 
     useEffect(() => {
-        fetch(`http://localhost:3000/items/${params.id}`)
+        fetch(`https://freshmade-market.herokuapp.com/items/${params.id}`)
          .then(r => r.json())
          .then((item) => {
          setItem(item)

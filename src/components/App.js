@@ -23,14 +23,14 @@ function App() {
   // console.log(currentUser)
 
   useEffect(() => {
-    fetch('http://localhost:3000/items')
+    fetch('https://freshmade-market.herokuapp.com/items')
       .then(res => res.json())
       .then(itemData => setItems(itemData))
 
   }, [])
 
   useEffect(() => {
-    fetch('http://localhost:3000/categories')
+    fetch('https://freshmade-market.herokuapp.com/categories')
     .then(res => res.json())
     .then(categoryData => setCategory(categoryData))
   }, [])

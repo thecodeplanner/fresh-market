@@ -42,7 +42,7 @@ function AddItem({ addItem, category, currentUser }) {
             category_id: categoryId
         }
 
-        fetch("http://localhost:3000/items", {
+        fetch("https://freshmade-market.herokuapp.com/items", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

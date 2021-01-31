@@ -9,7 +9,7 @@ function Login({setCurrentUser}) {
     function handleSubmit(e) {
         e.preventDefault()
         // setCurrentUser(true)
-        fetch('http://localhost:3000/login', {
+        fetch('https://freshmade-market.herokuapp.com/login', {
             method: "POST",
           })
             .then((r) => r.json())

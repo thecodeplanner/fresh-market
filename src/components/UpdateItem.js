@@ -12,7 +12,7 @@ function UpdateItem({onDelete}) {
     const [price, setPrice] = useState('')
 
     useEffect(() => {
-        fetch(`http://localhost:3000/items/${params.id}`)
+        fetch(`https://freshmade-market.herokuapp.com/items/${params.id}`)
          .then(r => r.json())
          .then((item) => {
          setItem(item)
@@ -37,7 +37,7 @@ function UpdateItem({onDelete}) {
 
         console.log(newItem)
 
-        fetch(`http://localhost:3000/items/${item.id}`, {
+        fetch(`https://freshmade-market.herokuapp.com/items/${item.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type" : "application/json"
@@ -51,7 +51,7 @@ function UpdateItem({onDelete}) {
 
        function handleDelete() {
            if (window.confirm(`Are you sure you want to delete ${item.name} from the market?`)) {
-            fetch(`http://localhost:3000/items/${item.id}`, {
+            fetch(`https://freshmade-market.herokuapp.com/items/${item.id}`, {
                 method: "DELETE"
             })
             onDelete(item.id)

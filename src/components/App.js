@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from 'react'
-// import logo from './logo.svg';
-// import './App.css' from "./src"
 import Header from './Header'
 import ItemContainer from './ItemContainer'
 import ItemDetails from './ItemDetails'
@@ -11,17 +9,12 @@ import Signup from './Signup'
 import Cart from './Cart'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 
-
-
-
 function App() {
   const [items, setItems] = useState([])
   const [category, setCategory] = useState([])
   const [currentUser, setCurrentUser] = useState(null)
   const [inCart, setInCart] = useState([])
   
-  // console.log(currentUser)
-
   useEffect(() => {
     fetch('https://freshmade-market.herokuapp.com/items')
       .then(res => res.json())
@@ -34,8 +27,6 @@ function App() {
     .then(res => res.json())
     .then(categoryData => setCategory(categoryData))
   }, [])
-
-  // console.log(category)
 
 
     function handleAddItem(newItemData) {

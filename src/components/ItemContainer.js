@@ -6,7 +6,6 @@ import AddItem from './AddItem'
 function ItemContainer({items, addItem, category, currentUser}) {
     const [search, setSearch] = useState("")
     const [selectedCategory, setSelectedCategory] = useState("All")
-    
     const [showForm, setShowForm] = useState(false)
 
     const filteredSearchItems = items.filter((item) => {

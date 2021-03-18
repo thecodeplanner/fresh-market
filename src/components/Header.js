@@ -1,8 +1,6 @@
 import React from "react"
 import Navbar from "./Navbar"
 
-
-
 function Header({currentUser, setCurrentUser}) {
     return (
         <>

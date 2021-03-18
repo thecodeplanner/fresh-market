@@ -3,13 +3,9 @@ import { useParams, useHistory } from "react-router-dom";
 
 function ItemDetails({currentUser, onSetCart}) {
     const history = useHistory()
-
-  
-
     const [item, setItem] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false)
     const params = useParams()
-
 
     useEffect(() => {
         fetch(`https://freshmade-market.herokuapp.com/items/${params.id}`)

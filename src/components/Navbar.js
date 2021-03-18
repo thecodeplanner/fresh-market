@@ -5,11 +5,8 @@ function Navbar({currentUser, setCurrentUser}) {
     const history = useHistory()
 
     function logout() {
-        
         setCurrentUser(null);
         history.push('/home')
-
-
       }
 
     return(
@@ -28,7 +25,6 @@ function Navbar({currentUser, setCurrentUser}) {
                 <NavLink to="/login" exact className="button">
                     <li>login</li>
                 </NavLink>
-
                 <NavLink to="/signup" exact className="button">
                     <li>signup</li>
                 </NavLink>
